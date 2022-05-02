@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Products A",
+      "img": "abc,jpg",
+      "price": 500,
+      "desc": "abcd"
+    },
+    {
+      "id": 2,
+      "name": "Products B",
+      "img": "abc,jpg",
+      "price": 500,
+      "desc": "abcd"
+    },
+    {
+      "id": 3,
+      "name": "Products C",
+      "img": "abc,jpg",
+      "price": 500,
+      "desc": "abcd"
+    },
+    {
+      "id": 4,
+      "name": "Products D",
+      "img": "abc,jpg",
+      "price": 500,
+      "desc": "abcd"
+    },
+    {
+      "id": 5,
+      "name": "Products Em",
+      "img": "abc,jpg",
+      "price": 500,
+      "desc": "abcd"
+    }
+  ],
+  "users": [
+    {
+      "email": "xuandai300092@gmail.com",
+      "password": "$2a$10$pzpeTx9NDvv.EG9KdoZOROa.5y4fsSgUriwqTZOCEPvDN9Gdslkg2",
+      "name": "Nguyễn Xuân Đại",
+      "id": 1
+    },
+    {
+      "email": "dominhtanqaz@gmail.com",
+      "password": "$2a$10$KSxHlFifwpn6ufgfkpHOIeQPx4bSEgd.PRuxro2seu8SgxfJPwV4C",
+      "name": "Product A",
+      "id": 2
+    }
+  ]
+}
