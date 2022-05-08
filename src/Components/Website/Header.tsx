@@ -16,7 +16,9 @@ const Header = (props: Props) => {
             </label>
             <input className="hidden" type="checkbox" id="menu-toggle" />
             <div className="hidden md:flex md:items-center md:w-auto w-[40%] order-3 md:order-1" id="menu">
+                
                 <nav>
+                    
                     <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                         <li>
                             <NavLink className="inline-block no-underline hover:text-black hover:underline py-2 px-4" to="/">Home</NavLink>
@@ -35,24 +37,6 @@ const Header = (props: Props) => {
                         </li> */}
                     </ul>
                 </nav>
-            </div>
-            <div className="order-1 md:order-2 w-[30%]">
-                <a className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="/">
-                    <a className="
-        flex
-        items-center
-        text-gray-900
-        hover:text-gray-900
-        focus:text-gray-900
-        mt-2
-        lg:mt-0
-        mr-1
-      " href="#">
-        
-            <img src="https://yome.vn/logo-cac-hang-giay-noi-tieng/imager_34_36862_700.jpg" style={{ height: "60px" }} alt=""
-              loading="lazy" />
-          </a>
-                </a>
             </div>
             <div className="order-2 md:order-3 flex items-center" id="nav-content w-[30%]">
                 <NavLink className="pl-3 inline-block no-underline hover:text-black" to="/Cart">
