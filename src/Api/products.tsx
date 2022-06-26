@@ -26,3 +26,12 @@ export const updateProducts = (products: ProductType) => {
     const url = `products/${products._id}`
     return instance.put(url, products)
 }
+
+export const NamePro = (keyword : any) =>{
+    const url=`/products?name=${keyword}`;
+    return instance.get(url)
+};
+export const productCate = (id : any) =>{
+    const url=`/products/ct=${id}`;
+    return instance.get(url)
+};
