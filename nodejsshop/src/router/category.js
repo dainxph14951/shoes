@@ -13,6 +13,7 @@ router.get('/categorys', async (req, res) => {
         })
     }
 })
+
 router.post('/categorys', async (req, res) => {
     try {
         const category = await Category(req.body).save();
@@ -23,7 +24,7 @@ router.post('/categorys', async (req, res) => {
         })
     }
 })
-router.get('/categorys/:id', async (req, res) => {
+router.put('/categorys/:id', async (req, res) => {
     const condistion = { _id: req.params.id };
     const { name } = req.body;
     try {
@@ -44,6 +45,18 @@ router.delete('/categorys/:id', async (req, res) => {
       } catch (error) {
         res.status(400).json({
           message: 'Xóa sản phẩm không thành công',
+        });
+      }
+})
+router.get('/categorys/:id', async (req, res) => {
+    try {
+        const category = await Category.findOne({
+          _id: req.params.id,
+        }).exec();
+        res.json(category);
+      } catch (error) {
+        res.status(400).json({
+          message: 'sản phẩm không thành công',
         });
       }
 })
