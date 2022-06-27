@@ -75,7 +75,7 @@ router.put('/products/:id', async (req, res) => {
 
 // Remove products
 
-router.delete('/prducts', async (req, res) => {
+router.delete('/products', async (req, res) => {
         try {
             const products = await Product.findOneAndRemove({_id: req.params.id}).exec();
             res.json(products)
@@ -86,7 +86,7 @@ router.delete('/prducts', async (req, res) => {
         }
 })
 // detail products
-router.get('/prducts/:id', async (req, res) => {
+router.get('/products/:id', async (req, res) => {
     try {
         const products = await Product.findOne({_id: req.params.id}).exec();
         res.json(products)

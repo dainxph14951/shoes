@@ -3,7 +3,7 @@ import Category from '../model/category'
 
 const router = Router();
 
-router.get('/category', async (req, res) => {
+router.get('/categorys', async (req, res) => {
     try {
         const category = await Category.find().exec();
         res.json(category);
@@ -13,7 +13,7 @@ router.get('/category', async (req, res) => {
         })
     }
 })
-router.post('/category', async (req, res) => {
+router.post('/categorys', async (req, res) => {
     try {
         const category = await Category(req.body).save();
         res.json(category);

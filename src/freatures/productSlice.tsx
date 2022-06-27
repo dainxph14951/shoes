@@ -67,7 +67,7 @@ const productSlice = createSlice({
         },
         [addProduct.fulfilled]: (state, action) => {
             state.value.push(action.payload)
-        }
+        },
         [removeProduct.fulfilled]: (state, action) => {
             state.value = state.value.filter(item => item._id !== action.payload._id)
         },

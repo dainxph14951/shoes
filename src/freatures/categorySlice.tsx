@@ -5,7 +5,7 @@ import type { RootState } from "../app/store";
 
 export const getCategorys = createAsyncThunk("categorys/getCategorys",
     async () => {
-        const { data } = await listCate()
+        const { data } = await listCate();
         return data;
     });
 export const addCategory = createAsyncThunk("categorys/addCategory",
