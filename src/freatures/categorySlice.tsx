@@ -13,6 +13,7 @@ export const addCategory = createAsyncThunk("categorys/addCategory",
         const { data } = await addCate(params)
         return data;
     });
+
 export const removeCategory = createAsyncThunk("categorys/removeCategory",
     async (params: any) => {
         const { data } = await removeCate(params);
