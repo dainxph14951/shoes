@@ -12,13 +12,13 @@ const ListProducts = () => {
 
     const dispatch = useAppDispatch();
     const products = useAppSelector((state) => state.products.value)
-    const [ categorys, getCategorys] = useState<CategoryType[]>();
+    const [ categorys, setCategorys] = useState<CategoryType[]>();
     const timeClearRef = useRef(null);
 
     useEffect(() => {
         const getCategorry = async () => {
             const {data} = await listCategorys();
-            getCategorys(data);
+            setCategorys(data);
         }
         getCategorry();
         dispatch(listProduct());
