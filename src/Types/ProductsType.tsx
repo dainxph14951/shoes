@@ -5,5 +5,6 @@ export type ProductType = {
     quantity: number,
     img: string,
     price: number,
-    desc: string
+    desc: string,
+    updatedAt? :string
 }

@@ -97,6 +97,16 @@ router.get('/products/:id', async (req, res) => {
     }
 })
 
-
+router.get("/products/ct=:cate", async (req, res) => {
+    const condistion = { category: req.params.cate };
+    try {
+        const products = await Product.find(condistion).exec();
+        res.status(200).json(products)
+    } catch (error) {
+        res.status(401).json({
+            message: "Lỗi,không thành công !"
+        })
+    }
+  });
 
 export default router

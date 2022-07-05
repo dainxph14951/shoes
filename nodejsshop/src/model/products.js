@@ -1,4 +1,4 @@
-import mongoose,{ObjectId} from "mongoose";
+import mongoose,{ObjectId, Schema}from "mongoose";
 import category from './category'
 const ProductsSchema = mongoose.Schema({
         name : {
@@ -23,9 +23,9 @@ const ProductsSchema = mongoose.Schema({
             type: String,
             required: true,
         },
-        category: {
-            type: ObjectId,
-            ref: category
+        category : {
+            type : mongoose.Types.ObjectId,
+            ref : category
         }
         
 },{timestamps: true})

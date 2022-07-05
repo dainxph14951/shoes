@@ -3,7 +3,7 @@ import { listCate,addCate,readCate,removeCate,updateCate } from "../Api/categary
 import { CategoryType } from "../Types/CategoryType";
 import type { RootState } from "../app/store";
 
-export const getCategorys = createAsyncThunk("categorys/getCategorys",
+export const listCategorys = createAsyncThunk("categorys/getCategorys",
     async () => {
         const { data } = await listCate();
         return data;
@@ -32,14 +32,14 @@ const categorySlice = createSlice({
     },
     reducers: {},
     extraReducers: {
-        [getCategorys.pending]: (state, action) => {
+        [listCategorys.pending]: (state, action) => {
             state.loading = true;
         },
-        [getCategorys.fulfilled]: (state, action) => {
+        [listCategorys.fulfilled]: (state, action) => {
             (state.loading = false),
                 (state.value = action.payload);
         },
-        [getCategorys.rejected]: (state, action) => {
+        [listCategorys.rejected]: (state, action) => {
             state.status = action.error;
         },
         [addCategory.fulfilled]: (state, action) => {

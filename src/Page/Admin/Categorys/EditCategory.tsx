@@ -5,7 +5,8 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { readCate } from '../../../Api/categary';
 import { useAppDispatch } from '../../../app/hooks';
 import { updateCategory } from '../../../freatures/categorySlice';
-
+import "toastr/build/toastr.min.css"
+import toastr from 'toastr'
 const EditCategory = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -23,7 +24,7 @@ const EditCategory = () => {
     const onSubmit: SubmitHandler<CategoryType> = data => {
         dispatch(updateCategory(data))
         console.log(data);
-        alert("Update thành công .")
+        toastr.success('update thành công !!')
         navigate("/admin/categorys")
     }
     return (
@@ -34,7 +35,7 @@ const EditCategory = () => {
             <form action="" onSubmit={handleSubmit(onSubmit)}>
                 <span>Name Category</span>
                 <input type="text" {...register('name', { required: true })} /><hr />
-
+                {errors.name && <span>Vui lòng không để trống</span> }
                 <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                     update
                 </button>

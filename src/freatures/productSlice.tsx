@@ -2,31 +2,31 @@ import React from "react";
 
 import { createAsyncThunk,  } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-import { listProducts, addProducts, readProducts, removeProducts, updateProducts,NamePro,productCate } from "../Api/products";
+import { listProducts, addProducts, readProducts, removeProducts, updateProducts,NamePro,productCate, likeNamePro } from "../Api/products";
 import { ProductType } from "../Types/ProductsType";
 
 
 export const listProduct = createAsyncThunk( 'products/listProduct' , async () => {
-    const data = await listProducts();
+    const {data} = await listProducts();
     return data;
 });
 
 export const addProduct = createAsyncThunk('products/addProduct', async (params: ProductType) => {
-    const data = await addProducts(params);
+    const {data} = await addProducts(params);
     return data;
 })
 export const removeProduct = createAsyncThunk('products/removeProduct', async (params: ProductType) => {
-    const data = await removeProducts(params);
+    const {data} = await removeProducts(params);
     return data;
 })
 
 export const updateProduct = createAsyncThunk('products/updateProduct', async (params: ProductType) => {
-    const data = await updateProducts(params);
+    const {data} = await updateProducts(params);
     return data;
 })
 
 export const readProduct = createAsyncThunk('products/readProduct', async (params: ProductType) => {
-    const data = await readProducts(params);
+    const {data} = await readProducts(params);
     return data;
 })
 
@@ -43,6 +43,17 @@ export const productCates =createAsyncThunk(
       return data;
     }
   );
+
+  export const filterProduct = createAsyncThunk(
+    "products/filterProducts", async (category: any) => {
+        const { data } = await productCate(category)
+        return data
+    });
+    export const filterProName = createAsyncThunk(
+        "products/filterProName", async (keyword: any) => {
+            const { data } = await likeNamePro(keyword)
+            return data
+        });
 const productSlice = createSlice({
     name: "products",
     initialState: {
@@ -79,6 +90,14 @@ const productSlice = createSlice({
         },
         [namesProduct.fulfilled]: (state, action) => {
               state.value = action.payload;
+        },
+        [filterProduct.fulfilled]: (state, action) => {
+            state.value = action.payload;
+        },
+        [filterProName.fulfilled]: (state, action) => {
+            // const products = action.payload.filter(item => item.category === state.value[0].category)
+            // console.log(products);
+            state.value = action.payload;
         },
     }   
 });

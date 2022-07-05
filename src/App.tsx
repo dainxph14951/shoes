@@ -14,6 +14,10 @@ import Dashboard from './Page/Admin/Dashboard';
 import ListCategory from './Page/Admin/Categorys/ListCategory';
 import AddCategory from './Page/Admin/Categorys/AddCategory';
 import EditCategory from './Page/Admin/Categorys/EditCategory';
+import ListProducts from './Page/Admin/Products/ListProducts';
+import EditProducts from './Page/Admin/Products/EditProducts';
+import AddProducts from './Page/Admin/Products/AddProducts';
+import "toastr/build/toastr.min.css"
 
 function App() {
   const [products, setProducts] = useState<ProductType[]>([])
@@ -31,6 +35,10 @@ function App() {
         <Route path='category' element={<ListCategory/>} />
         <Route path='category/add' element={<AddCategory/>} />
         <Route path='category/:id/edit' element={<EditCategory/>} />
+
+        <Route path='product' element={<ListProducts />} />
+        <Route path='product/:id/edit' element={<EditProducts />} />
+        <Route path='product/add' element={<AddProducts />} />
 
         </Route>
 
